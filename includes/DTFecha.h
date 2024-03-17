@@ -17,4 +17,5 @@ class DTFecha {
         void setanio(int);
 
         ~DTFecha();
+        //holas
 } ;
