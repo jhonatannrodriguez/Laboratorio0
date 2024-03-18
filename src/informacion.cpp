@@ -1,17 +1,16 @@
-#include "informacion.h"
-#include "DTFecha.h"
+#include "../includes/informacion.h"
 #include <iostream>
-#include<string>
+#include <string>
 
 int Informacion::getId(){
-    return this.Identificador;
+    return this->Identificador;
 }
 DTFecha Informacion::getfecha(){
-    return this.Fecha;
+    return this->Fecha;
 }
 void Informacion::setId(int id){
-    this.Identificador = id;
+    this->Identificador = id;
 }
 void Informacion::setfecha(DTFecha fecha){
-    this.Fecha = fecha;
+    this->Fecha = fecha;
 }

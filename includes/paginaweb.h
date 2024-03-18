@@ -1,24 +1,23 @@
 #include "informacion.h"
-#include<string>
 
 class PaginaWeb : public Informacion {
     private:
-        std::string Titulo;
-        std::string Link;
-        std::string Text;
+        string Titulo;
+        string Link;
+        string Text;
     public:
         PaginaWeb();
-        PaginaWeb(std::string, std::string, std::string);
-        std::string toString();
+        PaginaWeb(string, string, string);
+        string toString();
 
-        std::string gettitulo();
-        void settitulo(std::string);
+        string gettitulo();
+        void settitulo(string);
 
-        std::string getlink();
-        void setlink(std::string);
+        string getlink();
+        void setlink(string);
 
-        std::string gettext();
-        void settext(std::string);
+        string gettext();
+        void settext(string);
 
         ~PaginaWeb();
 };

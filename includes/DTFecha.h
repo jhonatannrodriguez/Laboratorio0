@@ -1,4 +1,4 @@
-#include<string>
+using namespace std;
 
 class DTFecha {
     private:
@@ -17,5 +17,4 @@ class DTFecha {
         void setanio(int);
 
         ~DTFecha();
-        //holas
 } ;

@@ -1,43 +1,47 @@
-#include "informacion.h"
-#include "libro.h"
-#include<iostream>
-// #include<set>
-#include<string>
+#include "../includes/libro.h"
+#include <iostream>
 
 Libro::Libro(){
+    this->titulo = "";
+    this->autores = {""};
+    this->resumen = "";
+}
+Libro::Libro(string titulo, vector<string> autores , string resumen ){
+    this->titulo = titulo;
+    this->autores = autores;
+    this->resumen = resumen;
+}
 
-    this.titulo = "";
-    // std::set<string> this.autores = ?;
-    this.resumen = "";
+string Libro::gettitulo(){
+    return this->titulo;
 }
-Libro::Libro(std::string titulo, /* std::set<string> autores */, std::string resumen ){
-    this.titulo = titulo;
-    this.autores = autores;
-    this.resumen = resumen;
-}
-
-std::string Libro::gettitulo(){
-    return this.titulo;
-}
-/* std::set<string>*/ Libro::getautores(){
-    return this.autores;
+vector<string> Libro::getautores(){
+    return this->autores;
 } 
-std::string Libro::getresumen(){
-    return this.resumen;
+string Libro::getresumen(){
+    return this->resumen;
 }
 
-void Libro::settitulo(std::string titulo){
-    this.titulo = titulo;
+void Libro::settitulo(string titulo){
+    this->titulo = titulo;
 }
- void Libro::setautores(/* std::set<string> */ autores){
-    this.autores = autores;
+ void Libro::setautores(vector<string> autores){
+    this->autores = autores;
 }
-void Libro::setresumen(std::string resumen){
-    this.resumen = resumen;
+void Libro::setresumen(string resumen){
+    this->resumen = resumen;
 }
 
-/* std::string Libro::toString(){
-    return "Libro: "+std::to_string(getId())+", "+getfecha()+", "+gettitulo()+", "+getautores()+", "+getresumen();
+string Libro::toString(){
+    DTFecha fecha = getfecha();
+    string res = "Libro: " + to_string(getId()) + ", ";
+    res += to_string(fecha.getdia()) + "/" + to_string(fecha.getmes()) + "/" + to_string(fecha.getanio()) + ", ";
+    res += gettitulo() + ", ";
+    for (int i = 0; i < getautores().size(); i++) {
+        res += getautores()[i] + " ";
+    }
+    res += ", " + getresumen() + "\n";
+    return res;
+}
 
-}*/
-Libro::~Libro(){};
+Libro::~Libro() {};

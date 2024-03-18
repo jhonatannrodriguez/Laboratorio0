@@ -1,24 +1,22 @@
 #include "informacion.h"
-#include<string>
-// #include<set>
 
 class Libro : public Informacion {
     private:
-        std::string titulo;
-        // std::set<string> autores;
-        std::string resumen;
+        string titulo;
+        vector<string> autores;
+        string resumen;
     public: 
         Libro();
-        Libro(std::string, std::string[], std::string);
+        Libro(string, vector<string>, string);
 
-        std::string toString();
+        string toString();
 
-        std::string gettitulo();
-        void settitulo(std::string);
-        std::string[] getautores();
-        void setautores (std::string[]);
-        std::string getresumen();
-        void setresumen(std::string);
+        string gettitulo();
+        void settitulo(string);
+        vector<string> getautores();
+        void setautores (vector<string>);
+        string getresumen();
+        void setresumen(string);
 
         ~Libro();
 };

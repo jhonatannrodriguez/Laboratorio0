@@ -1,20 +1,19 @@
-#include "informacion.h"
-#include "estudiante.h"
 #include<string>
+using namespace std;
 
 class DTInfoEstudiante {
     private:
         int CI;
-        std::string NombreEst;
+        string NombreEst;
         int IdentificadorInfo;
     public:
         DTInfoEstudiante();
-        DTInfoEstudiante(int, std::string, int);
+        DTInfoEstudiante(int, string, int);
 
         int getCI();
         void setCI(int);
-        std::string getNombreEst();
-        void setNombreEst(std::string);
+        string getNombreEst();
+        void setNombreEst(string);
         int getIdInfo();
         void setIdInfo(int);
 

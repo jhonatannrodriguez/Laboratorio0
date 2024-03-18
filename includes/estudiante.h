@@ -1,14 +1,25 @@
-#include "informacion.h"
-#include "datatypes.h"
-#include<string>
+//#include "informacion.h"
+#include "DTFecha.h"
+#include <string>
+#include <vector>
+using namespace std;
 
 class Estudiante {
     private:
-        std::string Nombre;
+        string Nombre;
         int CI;
-        std::string Email;
-        std::vector<Informacion> guardado_por;
+        string Email;
+        //vector<Informacion> guardado_por;
     public: 
-        std::string toString();
-        std::string[] listarInfo(DTFecha);
+        Estudiante();
+        Estudiante(string, int, string);
+        string getnombre();
+        void setnombre(string);
+        int getCI();
+        void setCI(int);
+        string getemail();
+        void setemail(string);
+        string toString();
+        vector<string> listarInfo(DTFecha);
+        ~Estudiante();
 };

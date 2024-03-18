@@ -1,20 +1,22 @@
+#ifndef CHATGPT
+#define CHATGPT
 #include "informacion.h"
-#include<string>
 
 class chatGPT : public Informacion {
     private:
-        std::string pregunta;
-        std::string respuesta;
+        string pregunta;
+        string respuesta;
     public: 
         chatGPT();
-        chatGPT(std::string, std::string);
+        chatGPT(string, string);
 
-        std::string toString();
+        string toString();
 
-        std::string getpregunta();
-        void setpregunta(std::string);
-        std::string getrespuesta();
-        void setrespuesta(std::string);
+        string getpregunta();
+        void setpregunta(string);
+        string getrespuesta();
+        void setrespuesta(string);
 
         ~chatGPT();
 };
+#endif //CHATGPT
