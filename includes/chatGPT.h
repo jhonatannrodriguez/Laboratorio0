@@ -9,14 +9,11 @@ class chatGPT : public Informacion {
     public: 
         chatGPT();
         chatGPT(string, string);
-
         string toString();
-
         string getpregunta();
         void setpregunta(string);
         string getrespuesta();
         void setrespuesta(string);
-
         ~chatGPT();
 };
 #endif //CHATGPT
