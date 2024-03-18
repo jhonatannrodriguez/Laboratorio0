@@ -9,15 +9,11 @@ class PaginaWeb : public Informacion {
         PaginaWeb();
         PaginaWeb(string, string, string);
         string toString();
-
         string gettitulo();
         void settitulo(string);
-
         string getlink();
         void setlink(string);
-
         string gettext();
         void settext(string);
-
         ~PaginaWeb();
 };

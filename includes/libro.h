@@ -8,15 +8,12 @@ class Libro : public Informacion {
     public: 
         Libro();
         Libro(string, vector<string>, string);
-
         string toString();
-
         string gettitulo();
         void settitulo(string);
         vector<string> getautores();
         void setautores (vector<string>);
         string getresumen();
         void setresumen(string);
-
         ~Libro();
 };
