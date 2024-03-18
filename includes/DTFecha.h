@@ -1,3 +1,6 @@
+#ifndef DTFECHA_H
+#define DTFECHA_H
+
 using namespace std;
 
 class DTFecha {
@@ -17,3 +20,5 @@ class DTFecha {
         
         ~DTFecha();
 } ;
+
+#endif

@@ -1,5 +1,6 @@
-#ifndef CHATGPT
-#define CHATGPT
+#ifndef CHATGPT_H
+#define CHATGPT_H
+
 #include "informacion.h"
 
 class chatGPT : public Informacion {
@@ -16,4 +17,4 @@ class chatGPT : public Informacion {
         void setrespuesta(string);
         ~chatGPT();
 };
-#endif //CHATGPT
+#endif //CHATGPT_H

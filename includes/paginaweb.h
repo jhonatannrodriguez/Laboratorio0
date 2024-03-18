@@ -1,3 +1,6 @@
+#ifndef PAGINAWEB_H
+#define PAGINAWEB_H
+
 #include "informacion.h"
 
 class PaginaWeb : public Informacion {
@@ -17,3 +20,5 @@ class PaginaWeb : public Informacion {
         void settext(string);
         ~PaginaWeb();
 };
+
+#endif

@@ -1,3 +1,6 @@
+#ifndef LIBRO_H
+#define LIBRO_H
+
 #include "informacion.h"
 
 class Libro : public Informacion {
@@ -17,3 +20,5 @@ class Libro : public Informacion {
         void setresumen(string);
         ~Libro();
 };
+
+#endif

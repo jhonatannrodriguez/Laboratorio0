@@ -1,3 +1,6 @@
+#ifndef DTINFOESTUDIANTE_H
+#define DTINFOESTUDIANTE_H
+
 #include<string>
 using namespace std;
 
@@ -18,3 +21,4 @@ class DTInfoEstudiante {
         ~DTInfoEstudiante();
 } ;
 
+#endif
