@@ -37,7 +37,7 @@ string Libro::toString(){
     string res = "Libro: " + to_string(getId()) + ", ";
     res += to_string(fecha.getdia()) + "/" + to_string(fecha.getmes()) + "/" + to_string(fecha.getanio()) + ", ";
     res += gettitulo() + ", ";
-    for (int i = 0; i < getautores().size(); i++) {
+    for (unsigned long int i = 0; i < getautores().size(); i++) {
         res += getautores()[i] + " ";
     }
     res += ", " + getresumen() + "\n";

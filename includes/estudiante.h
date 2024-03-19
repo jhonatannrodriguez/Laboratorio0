@@ -1,4 +1,3 @@
-#include "informacion.h"
 #ifndef ESTUDIANTE_H
 #define ESTUDIANTE_H
 
@@ -14,7 +13,7 @@ class Estudiante {
         string Nombre;
         int CI;
         string Email;
-        vector<Informacion> guardado_por;
+        vector<Informacion*> guardado_por;
     public: 
         Estudiante();
         Estudiante(string, int, string);

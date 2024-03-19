@@ -13,7 +13,7 @@ class Informacion {
     private:
         int Identificador;
         DTFecha Fecha;
-        vector<Estudiante> guardado_por;
+        vector<Estudiante*> guardado_por;
     public:
         virtual string toString()=0;
         int getId();

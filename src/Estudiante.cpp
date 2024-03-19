@@ -41,5 +41,6 @@ string Estudiante::toString() {
     res += getnombre() + ", ";
     res += to_string(getCI()) + ", ";
     res += getemail() + "\n";
+    return res;
 }
 
