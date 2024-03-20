@@ -30,4 +30,4 @@ void DTFecha::setmes(int mes) {
 void DTFecha::setanio(int anio) {
     this->anio = anio;
 }
-DTFecha::~DTFecha(){};
+DTFecha::~DTFecha() {};

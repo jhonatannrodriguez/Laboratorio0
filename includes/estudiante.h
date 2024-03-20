@@ -1,6 +1,7 @@
 #ifndef ESTUDIANTE_H
 #define ESTUDIANTE_H
 
+#include "informacion.h"
 #include "DTFecha.h"
 #include <string>
 #include <vector>
@@ -13,8 +14,8 @@ class Estudiante {
         string Nombre;
         int CI;
         string Email;
-        vector<Informacion*> guardado_por;
     public: 
+        vector<Informacion*> guardado_por;
         Estudiante();
         Estudiante(string, int, string);
         string getnombre();
@@ -24,6 +25,7 @@ class Estudiante {
         string getemail();
         void setemail(string);
         string toString();
+        void setguardado(Informacion*);
         vector<string> listarInfo(DTFecha);
         ~Estudiante();
 };

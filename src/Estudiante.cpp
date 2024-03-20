@@ -44,3 +44,17 @@ string Estudiante::toString() {
     return res;
 }
 
+void Estudiante::setguardado(Informacion* Info) {
+    this->guardado_por.push_back(Info);
+}
+
+vector<string> Estudiante::listarInfo(DTFecha Desde) {
+    vector<string> res;
+    for (unsigned long int i = 0; i < this->guardado_por.size(); i++) {
+        if (this->guardado_por[i]->esfechaposterior(Desde)) {
+            res.push_back(this->guardado_por[i]->toString());
+        }
+    }
+    return res;
+}
+

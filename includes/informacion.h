@@ -1,7 +1,7 @@
-#include "estudiante.h"
 #ifndef INFORMACION_H
 #define INFORMACION_H
 
+#include "estudiante.h"
 #include "DTFecha.h"
 #include <vector>
 #include <string>
@@ -20,6 +20,8 @@ class Informacion {
         void setId(int);
         DTFecha getfecha();
         void setfecha(DTFecha);
+        void setguardado(Estudiante*);
+        bool esfechaposterior(DTFecha);
 };
 
 #endif

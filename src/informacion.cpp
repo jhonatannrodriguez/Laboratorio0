@@ -14,3 +14,20 @@ void Informacion::setId(int id){
 void Informacion::setfecha(DTFecha fecha){
     this->Fecha = fecha;
 }
+void Informacion::setguardado(Estudiante* Est) {
+    this->guardado_por.push_back(Est);
+}
+
+bool Informacion::esfechaposterior(DTFecha fecha) {
+    if (getfecha().getanio() > fecha.getanio()) {
+        return true;
+    } else if (getfecha().getanio() < fecha.getanio()) {
+        return false;
+    } else if (getfecha().getmes() > fecha.getmes()) {
+        return true;
+    } else if (getfecha().getmes() < fecha.getmes()) {
+        return false;
+    } else if (getfecha().getdia() >= fecha.getdia()) {  //preguntar si se agrega misma fecha
+        return true;
+    } else return false;
+}
