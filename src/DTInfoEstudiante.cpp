@@ -6,6 +6,13 @@ DTInfoEstudiante::DTInfoEstudiante() {
     this->NombreEst = "";
 }
 
+DTInfoEstudiante::DTInfoEstudiante(int CI, string NombreEst, int IdentificadorInfo)
+{
+    this->CI = CI;
+    this->IdentificadorInfo = IdentificadorInfo;
+    this->NombreEst = NombreEst;
+}
+
 int DTInfoEstudiante::getCI() {
     return this->CI;
 }
@@ -28,6 +35,12 @@ void DTInfoEstudiante::setNombreEst(string NombreEst) {
 
 void DTInfoEstudiante::setIdInfo(int IdentificadorInfo) {
     this->IdentificadorInfo = IdentificadorInfo;
+}
+
+ostream& operator<<(ostream& os,  DTInfoEstudiante& infoEstudiante) {
+    os << infoEstudiante.getCI() << ", " << infoEstudiante.getNombreEst() << ", " << infoEstudiante.getIdInfo();
+
+    return os;
 }
 
 DTInfoEstudiante::~DTInfoEstudiante() {}
