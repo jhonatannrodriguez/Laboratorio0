@@ -2,7 +2,7 @@ TARGET = $(BINDIR)/ejec
 
 
 OBJS   = $(OBJDIR)/main.o $(OBJDIR)/chatGPT.o $(OBJDIR)/DTFecha.o $(OBJDIR)/DTInfoEstudiante.o \
-		 $(OBJDIR)/estudiante.o \
+		 $(OBJDIR)/Estudiante.o \
 		 $(OBJDIR)/informacion.o $(OBJDIR)/libro.o $(OBJDIR)/paginaweb.o \
 		
 

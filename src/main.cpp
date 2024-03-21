@@ -1,10 +1,10 @@
-#include "./includes/informacion.h"
-#include "./includes/paginaweb.h"
-#include "./includes/DTFecha.h"
-#include "./includes/chatGPT.h"
-#include "./includes/libro.h"
-#include "./includes/estudiante.h"
-#include "./includes/DTInfoEstudiante.h"
+#include "../includes/informacion.h"
+#include "../includes/paginaweb.h"
+#include "../includes/DTFecha.h"
+#include "../includes/chatGPT.h"
+#include "../includes/libro.h"
+#include "../includes/estudiante.h"
+#include "../includes/DTInfoEstudiante.h"
 #include <iostream>
 
 using namespace std;
@@ -85,5 +85,16 @@ int main()
     est2->setguardado(Info5); Info5->setguardado(est2);
     
     // PARGE G
+    cout << "Informacion posterior a la fecha 8/3/2024 estudiante 1" << "\n";
+    for(unsigned long int i = 0; i < est1->listarInfo(DTFecha(8, 3, 2024)).size(); i++) {
+          cout << est1->listarInfo(DTFecha(8, 3, 2024))[i] << "\n";
+};
+
+    cout << "Informacion posterior a la fecha 8/3/2024 estudiante 2" << "\n";
+    for(unsigned long int i = 0; i < est2->listarInfo(DTFecha(8, 3, 2024)).size(); i++) {
+          cout << est2->listarInfo(DTFecha(8, 3, 2024))[i] << "\n";
+};
+
+
     
 }

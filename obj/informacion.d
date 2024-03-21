@@ -1,6 +1,7 @@
 obj/informacion.o: src/informacion.cpp /usr/include/stdc-predef.h \
  src/../includes/informacion.h src/../includes/estudiante.h \
- src/../includes/DTFecha.h /usr/include/c++/9/string \
+ src/../includes/informacion.h src/../includes/DTFecha.h \
+ /usr/include/c++/9/string \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
  /usr/include/features.h /usr/include/x86_64-linux-gnu/sys/cdefs.h \
