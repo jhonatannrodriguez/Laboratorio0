@@ -14,8 +14,8 @@ class Estudiante {
         string Nombre;
         int CI;
         string Email;
-    public: 
         vector<Informacion*> guardado_por;
+    public: 
         Estudiante();
         Estudiante(string, int, string);
         string getnombre();
@@ -26,6 +26,7 @@ class Estudiante {
         void setemail(string);
         string toString();
         void setguardado(Informacion*);
+        vector<Informacion*> getguardado();
         vector<string> listarInfo(DTFecha);
         ~Estudiante();
 };

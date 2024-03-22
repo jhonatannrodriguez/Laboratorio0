@@ -23,6 +23,7 @@ class Informacion {
         void setfecha(DTFecha);
         void setguardado(Estudiante*);
         bool esfechaposterior(DTFecha);
+        virtual ~Informacion()=0;
 };
 
 #endif

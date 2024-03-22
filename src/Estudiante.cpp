@@ -48,6 +48,10 @@ void Estudiante::setguardado(Informacion* Info) {
     this->guardado_por.push_back(Info);
 }
 
+vector<Informacion*> Estudiante::getguardado() {
+    return this->guardado_por;
+}
+
 vector<string> Estudiante::listarInfo(DTFecha Desde) {
     vector<string> res;
     for (unsigned long int i = 0; i < this->guardado_por.size(); i++) {

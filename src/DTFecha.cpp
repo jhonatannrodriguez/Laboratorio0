@@ -21,13 +21,4 @@ int DTFecha::getmes(){
 int DTFecha::getanio(){
     return this->anio;
 }
-void DTFecha::setdia(int dia) {
-    this->dia = dia;
-}
-void DTFecha::setmes(int mes) {
-    this->mes = mes;
-}
-void DTFecha::setanio(int anio) {
-    this->anio = anio;
-}
 DTFecha::~DTFecha() {};

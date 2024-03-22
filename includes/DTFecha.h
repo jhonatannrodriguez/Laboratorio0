@@ -12,11 +12,8 @@ class DTFecha {
         DTFecha();
         DTFecha(int, int, int);
         int getdia();
-        void setdia(int);
         int getmes();
-        void setmes(int);
         int getanio();
-        void setanio(int);
         
         ~DTFecha();
 } ;

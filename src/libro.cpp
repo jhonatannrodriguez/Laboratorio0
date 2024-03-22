@@ -44,4 +44,7 @@ string Libro::toString(){
     return res;
 }
 
-Libro::~Libro() {};
+Libro::~Libro() {
+    this->getautores().clear();
+    cout << "al lobby" << endl;
+}

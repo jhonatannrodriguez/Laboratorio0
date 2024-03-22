@@ -13,11 +13,8 @@ class DTInfoEstudiante {
         DTInfoEstudiante();
         DTInfoEstudiante(int, string, int);
         int getCI();
-        void setCI(int);
         string getNombreEst();
-        void setNombreEst(string);
         int getIdInfo();
-        void setIdInfo(int);
         ~DTInfoEstudiante();
 } ;
 

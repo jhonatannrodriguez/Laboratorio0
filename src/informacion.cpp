@@ -34,3 +34,5 @@ bool Informacion::esfechaposterior(DTFecha fecha) {
         return true;
     } else return false;
 }
+
+Informacion::~Informacion() {}
