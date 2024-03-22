@@ -1,4 +1,4 @@
-TARGET = $(BINDIR)/ejec
+TARGET = $(BINDIR)/main
 
 
 OBJS   = $(OBJDIR)/main.o $(OBJDIR)/chatGPT.o $(OBJDIR)/DTFecha.o $(OBJDIR)/DTInfoEstudiante.o \
@@ -7,7 +7,7 @@ OBJS   = $(OBJDIR)/main.o $(OBJDIR)/chatGPT.o $(OBJDIR)/DTFecha.o $(OBJDIR)/DTIn
 		
 
 INCDIR = include
-BINDIR = bin
+BINDIR = .
 OBJDIR = obj
 SRCDIR = src
 CFLAGS = -Wall -Werror -I$(INCDIR) -g
@@ -22,7 +22,12 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 	mkdir -p $(OBJDIR)
 	g++ -c -MD $(CFLAGS) $< -o $@
 
+
+$(OBJDIR)/main.o: main.cpp
+	mkdir -p $(OBJDIR)
+	g++ -c -MD $(CFLAGS) $< -o $@
+
 -include $(OBJDIR)/*.d
 .PHONY: clean
 clean: 
-	rm -r $(OBJDIR) $(BINDIR)
+	rm -r $(OBJDIR) $(TARGET)

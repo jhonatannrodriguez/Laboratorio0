@@ -1,10 +1,10 @@
-#include "../includes/informacion.h"
-#include "../includes/paginaweb.h"
-#include "../includes/DTFecha.h"
-#include "../includes/chatGPT.h"
-#include "../includes/libro.h"
-#include "../includes/estudiante.h"
-#include "../includes/DTInfoEstudiante.h"
+#include "./includes/informacion.h"
+#include "./includes/paginaweb.h"
+#include "./includes/DTFecha.h"
+#include "./includes/chatGPT.h"
+#include "./includes/libro.h"
+#include "./includes/estudiante.h"
+#include "./includes/DTInfoEstudiante.h"
 #include <iostream>
 #include <vector>
 

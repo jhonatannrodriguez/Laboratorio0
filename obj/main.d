@@ -1,6 +1,5 @@
-obj/main.o: src/main.cpp /usr/include/stdc-predef.h \
- src/../includes/informacion.h src/../includes/estudiante.h \
- src/../includes/informacion.h src/../includes/DTFecha.h \
+obj/main.o: main.cpp /usr/include/stdc-predef.h includes/informacion.h \
+ includes/estudiante.h includes/informacion.h includes/DTFecha.h \
  /usr/include/c++/9/string \
  /usr/include/x86_64-linux-gnu/c++/9/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/9/bits/os_defines.h \
@@ -126,9 +125,8 @@ obj/main.o: src/main.cpp /usr/include/stdc-predef.h \
  /usr/include/c++/9/bits/stl_uninitialized.h \
  /usr/include/c++/9/bits/stl_vector.h \
  /usr/include/c++/9/bits/stl_bvector.h /usr/include/c++/9/bits/vector.tcc \
- src/../includes/paginaweb.h src/../includes/DTFecha.h \
- src/../includes/chatGPT.h src/../includes/libro.h \
- src/../includes/estudiante.h src/../includes/DTInfoEstudiante.h \
+ includes/paginaweb.h includes/DTFecha.h includes/chatGPT.h \
+ includes/libro.h includes/estudiante.h includes/DTInfoEstudiante.h \
  /usr/include/c++/9/iostream /usr/include/c++/9/ostream \
  /usr/include/c++/9/ios /usr/include/c++/9/bits/ios_base.h \
  /usr/include/c++/9/bits/locale_classes.h \
