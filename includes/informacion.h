@@ -19,6 +19,7 @@ class Informacion {
         int getId();
         void setId(int);
         DTFecha getfecha();
+        vector<Estudiante*> getguardado();
         void setfecha(DTFecha);
         void setguardado(Estudiante*);
         bool esfechaposterior(DTFecha);

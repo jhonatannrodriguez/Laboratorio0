@@ -8,6 +8,9 @@ int Informacion::getId(){
 DTFecha Informacion::getfecha(){
     return this->Fecha;
 }
+vector<Estudiante*> Informacion::getguardado(){
+    return this->guardado_por;
+}
 void Informacion::setId(int id){
     this->Identificador = id;
 }

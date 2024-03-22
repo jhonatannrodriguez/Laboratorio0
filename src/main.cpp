@@ -12,7 +12,8 @@ using namespace std;
 int main()
 {
     
-    // Parte A-C
+    // Parte A  (Creamos objetos de la clase PaginaWeb)
+
     vector<Informacion*> vector_info;
 
     PaginaWeb* Info1 = new PaginaWeb("Programación 4 Guía Semana 1 (4/3)", "https://eva.fing.edu.uy/pluginfile.php/468051/mod_resource/content/4/Guia01_P42024_IntroCBasicos.pdf", "El objetivo de esta semana es contextualizar el paradigma de Orientación a Objetos (OO) en el marco de la Ingeniería de Software, así como comenzar a ver sus conceptos básicos y cómo éstos se implementan en C++.");
@@ -33,6 +34,8 @@ int main()
     Info2->setId(2);
     vector_info.push_back(Info2);
 
+    // PARTE B (Creamos los objetos de la clase chatGPT)
+
     chatGPT* Info3=new chatGPT("¿Qué es el polimorfismo en orientación a objetos?", "El polimorfismo en programación orientada a objetos se refiere a la capacidad de un objeto de tomar múltiples formas. Puede ser estático, resuelto en tiempo de compilación, basado en la herencia, o dinámico, resuelto en tiempo de ejecución, asociado a interfaces o métodos abstractos. En esencia, permite que objetos de diferentes clases respondan a la misma interfaz de manera coherente, facilitando la flexibilidad y extensibilidad del código.");
     DTFecha fecha3;
     fecha3.setanio(2024);
@@ -51,6 +54,8 @@ int main()
     Info4->setId(4);
     vector_info.push_back(Info4);
 
+    // PARTE C (Creamos el objeto de la clase Libro)
+
     vector<string> autores = {"Craig Larman"}; 
     Libro* Info5=new Libro("Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development", autores, "Applying UML and Patterns is the world’s #1 business and college introduction to “thinking in objects”―and using that insight in real-world object-oriented analysis and design. Building on two widely acclaimed previous editions, Craig Larman has updated this book to fully reflect the new UML 2 standard, to help you master the art of object design, and to promote high-impact, iterative, and skillful agile modeling practices.");
     
@@ -62,21 +67,24 @@ int main()
     Info5->setId(5);
     vector_info.push_back(Info5);
     
-    // Parte D 
+    // Parte D  (Devolvemos la informacion de todos los objetos anteriormente creados)
+
     cout << Info1->toString()<< "\n";
     cout << Info2->toString()<< "\n";
     cout << Info3->toString()<< "\n";
     cout << Info4->toString()<< "\n";
     cout << Info5->toString()<< "\n";
 
-    // Parte E
+    // Parte E (Creamos los objetos de clase Estudiante)
+
     vector<Estudiante*> vector_est;
     Estudiante* est1 = new Estudiante("Alex García", 52365899, "ag5678@gmail.com");
     vector_est.push_back(est1);
     Estudiante* est2 = new Estudiante("Betina Gonzalez", 49891239, "beg999@gmail.com");
     vector_est.push_back(est2);  //asegurarse de que este bien!!
 
-    // PARTE F
+    // PARTE F (A través de los pseudoatributos vinculamos Estudiantes e Informaciones en ambas direcciones)
+
     est1->setguardado(Info1); Info1->setguardado(est1);
     est1->setguardado(Info2); Info2->setguardado(est1);
     est1->setguardado(Info3); Info3->setguardado(est1);
@@ -84,17 +92,54 @@ int main()
     est2->setguardado(Info4); Info4->setguardado(est2);
     est2->setguardado(Info5); Info5->setguardado(est2);
     
-    // PARGE G
-    cout << "Informacion posterior a la fecha 8/3/2024 estudiante 1" << "\n";
-    for(unsigned long int i = 0; i < est1->listarInfo(DTFecha(8, 3, 2024)).size(); i++) {
-          cout << est1->listarInfo(DTFecha(8, 3, 2024))[i] << "\n";
+    // PARTE G (Devolvemos en pantalla la información posterior a la fecha dada, de cada estudiante)
+
+    cout << "Informacion posterior a la fecha 8/3/2024 estudiante 1:" << "\n";
+    DTFecha Fecha = DTFecha(8,3,2024);
+    vector<string> Info_estudiante1 = est1->listarInfo(Fecha); 
+    for(unsigned long int i = 0; i < Info_estudiante1.size(); i++) {
+          cout << Info_estudiante1[i] << "\n";
 };
 
-    cout << "Informacion posterior a la fecha 8/3/2024 estudiante 2" << "\n";
-    for(unsigned long int i = 0; i < est2->listarInfo(DTFecha(8, 3, 2024)).size(); i++) {
-          cout << est2->listarInfo(DTFecha(8, 3, 2024))[i] << "\n";
+    cout << "Informacion posterior a la fecha 8/3/2024 estudiante 2:" << "\n";
+    vector<string> Info_estudiante2 = est2->listarInfo(Fecha); 
+    for(unsigned long int i = 0; i < Info_estudiante2.size(); i++) {
+          cout << Info_estudiante2[i] << "\n";
 };
+ 
+/* PARTE H (Recorremos las informaciones en busca de la palabra "polimorfismo" y devolvemos un vector de 
+estudiantes que han guardado esa información) */
 
+// Creo un par de variables para facilitar la lectura del codigo
 
+    string palabra="polimorfismo";
+    vector<DTInfoEstudiante> Link_Info_Estudiante;
+    vector<Informacion*> vector_info_guardada;
+
+// Busco en el vector de informacion la palabra y guardo las informaciones que contengan la palabra en otro vector
+
+    for (unsigned long int i=0;i<vector_info.size();i++) {
+        if (vector_info[i]->toString().find(palabra))
+            vector_info_guardada.push_back(vector_info[i]);
+    }
+
+// Busco en las informaciones que contenian la palabra los estudiantes que la guardaron y los guardo en Link_Info_Estudiante
+
+    for (unsigned long int i=0;i<vector_info_guardada.size();i++){
+        for (unsigned long int j=0;j<vector_info_guardada[i]->getguardado().size();j++) {
+            
+            // Variable auxiliar para crear el DTInfoEstudiante que luego guardo en Link_Info_Estudiante
+             
+            DTInfoEstudiante Est_actual = DTInfoEstudiante(
+                vector_info_guardada[i]->getguardado()[j]->getCI(),
+                vector_info_guardada[i]->getguardado()[j]->getnombre(),
+                vector_info_guardada[i]->getId());
+            Link_Info_Estudiante.push_back(Est_actual);
+        }
+    }
+
+// Finalmente en Link_Info_Estudiante tengo el vector con los pares <Informacion , Estudiante>
+
+// PARTE I (Eliminamos un objeto de clase Información y sus correspondientes relaciones)
     
 }
