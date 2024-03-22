@@ -112,7 +112,7 @@ estudiantes que han guardado esa información) */
 
 // Creo un par de variables para facilitar la lectura del codigo
 
-    string palabra="chatGPT";
+    string palabra="polimorfismo";
     vector<DTInfoEstudiante> Link_Info_Estudiante;
     vector<Informacion*> vector_info_guardada;
 
