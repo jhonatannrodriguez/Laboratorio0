@@ -112,14 +112,14 @@ estudiantes que han guardado esa información) */
 
 // Creo un par de variables para facilitar la lectura del codigo
 
-    string palabra="polimorfismo";
+    string palabra="chatGPT";
     vector<DTInfoEstudiante> Link_Info_Estudiante;
     vector<Informacion*> vector_info_guardada;
 
 // Busco en el vector de informacion la palabra y guardo las informaciones que contengan la palabra en otro vector
 
     for (unsigned long int i=0;i<vector_info.size();i++) {
-        if (vector_info[i]->toString().find(palabra))
+        if (vector_info[i]->toString().find(palabra) != string::npos)
             vector_info_guardada.push_back(vector_info[i]);
     }
 
@@ -137,8 +137,12 @@ estudiantes que han guardado esa información) */
             Link_Info_Estudiante.push_back(Est_actual);
         }
     }
-
+  
 // Finalmente en Link_Info_Estudiante tengo el vector con los pares <Informacion , Estudiante>
+
+    for (unsigned long int i=0;i<Link_Info_Estudiante.size();i++){
+         cout << Link_Info_Estudiante[i] << endl;
+    }
 
 // PARTE I (Eliminamos un objeto de clase Información y sus correspondientes relaciones)
     

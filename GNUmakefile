@@ -25,4 +25,4 @@ $(OBJDIR)/%.o: $(SRCDIR)/%.cpp
 -include $(OBJDIR)/*.d
 .PHONY: clean
 clean: 
-	rm -f $(OBJDIR) $(BINDIR)
+	rm -r $(OBJDIR) $(BINDIR)
