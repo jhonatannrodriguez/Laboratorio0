@@ -62,3 +62,8 @@ vector<string> Estudiante::listarInfo(DTFecha Desde) {
     return res;
 }
 
+Estudiante::~Estudiante(){
+    this->getguardado().clear();
+    cout << "Objeto Estudiante eliminado!" << endl;
+}
+

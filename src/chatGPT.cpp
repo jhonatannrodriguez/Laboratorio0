@@ -33,4 +33,7 @@ string chatGPT::toString(){
     return res;
 }
 
-chatGPT::~chatGPT() {}; 
+chatGPT::~chatGPT() {
+    this->getguardado().clear();
+    cout << "Objeto Informacion eliminado!" << endl;
+}; 

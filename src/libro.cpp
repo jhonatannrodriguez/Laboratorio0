@@ -1,5 +1,4 @@
 #include "../includes/libro.h"
-#include <iostream>
 
 Libro::Libro(){
     this->titulo = "";
@@ -45,6 +44,7 @@ string Libro::toString(){
 }
 
 Libro::~Libro() {
+    this->getguardado().clear();
     this->getautores().clear();
-    cout << "al lobby libro" << endl;
+    cout << "Objeto Informacion eliminado!" << endl;
 }

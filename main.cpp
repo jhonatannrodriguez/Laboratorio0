@@ -134,7 +134,7 @@ int main()
     for(unsigned long int i = 0; i < Info_estudiante2.size(); i++) {
           cout << Info_estudiante2[i] << "\n";
 };
- 
+
 /* PARTE H (Recorremos las informaciones en busca de la palabra "polimorfismo" y devolvemos un vector de 
 estudiantes que han guardado esa información) */
 
@@ -144,24 +144,22 @@ estudiantes que han guardado esa información) */
 // Eliminamos Info5
 // Borra la referencia al objeto Informacion de cada Estudiante que lo tenga guardado
 
-    for (unsigned long int i = 0; i < vector_info[4]->getguardado().size(); i++) {
-        cout<<"for 1"<<endl;
-        for (unsigned long int j = vector_info[4]->getguardado()[i]->getguardado().size() + 1; j >= 1; j--) {
-            cout<<"for 2 "<< j<<endl;
-            if (vector_info[4]->getguardado()[i]->getguardado()[j-1] == vector_info[4]) {
-                cout<<"if"<<endl;
-                //Se va de rango si j = 2
-                vector_info[4]->getguardado()[i]->getguardado().erase(vector_info[4]->getguardado()[i]->getguardado().begin() + (j-1));             
-                break;
-            }
-        }
-    }
 
-
-    vector_info[4]->getguardado().clear();
+    est2->getguardado().pop_back();
     delete vector_info[4];
-
+    vector_info.pop_back();
     
+//Prueba para verificar que la informacion fue borrada.
     palabra_en_info_estudiante("Libro",vector_info);
 
+//Eliminamos memoria dinamica creada
+  /*  for(unsigned long int i = 0; i < vector_info.size(); i++){
+        delete vector_info[i];
+    }
+    vector_info.clear();
+
+    for(unsigned long int i = 0; i < vector_est.size(); i++){
+        delete vector_est[i];
+    }
+    vector_est.clear();*/
 }

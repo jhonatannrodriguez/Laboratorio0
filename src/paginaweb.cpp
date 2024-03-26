@@ -1,5 +1,4 @@
 #include "../includes/paginaweb.h"
-
 PaginaWeb::PaginaWeb() {
     this->Titulo = "";
     this->Link = "";
@@ -46,4 +45,7 @@ string PaginaWeb::toString(){
     return res;
 }
 
-PaginaWeb::~PaginaWeb() {}
+PaginaWeb::~PaginaWeb() {
+    this->getguardado().clear();
+    cout << "Objeto Informacion eliminado!" << endl;
+}
