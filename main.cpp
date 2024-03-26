@@ -132,22 +132,24 @@ estudiantes que han guardado esa información) */
 
 // PARTE I (Eliminamos un objeto de clase Información y sus correspondientes relaciones)
 // Eliminamos Info5
-
-    for (unsigned long int i = 0; i < vector_info[4]->getguardado().size(); i++) {
-        cout << to_string(i) << endl;
-        for (unsigned long int j = 0; j < vector_info[4]->getguardado()[i]->getguardado().size(); j++) {
-            cout << to_string(j) << endl;
+ // Borra la referencia al objeto Informacion de cada Estudiante que lo tenga guardado
+    for (unsigned long int i = 0; i < vector_info[4]->getguardado().size(); ++i) {
+        cout<<"for 1"<<endl;
+        for (unsigned long int j = vector_info[4]->getguardado()[i]->getguardado()[j].size(); j >= 0; --j) {
+            cout<<"for 2 "<< j<<endl;
             if (vector_info[4]->getguardado()[i]->getguardado()[j] == vector_info[4]) {
-                vector_info[4]->getguardado()[i]->getguardado().erase(vector_info.begin()+j);
+                cout<<"if"<<endl;
+                //Se va de rango si j = 2
+                vector_info[4]->getguardado()[i]->getguardado().erase(vector_info[4]->getguardado()[i]->getguardado().begin() + j);             
                 break;
             }
         }
-        cout << "hola" << endl;
     }
-    cout << "hola2" << endl;
-    vector_info[4]->getguardado().clear();
-    delete vector_info[4];
-    vector_info.erase(vector_info.begin()+4);
+
+
+vector_info[4]->getguardado().clear();
+delete vector_info[4];
+
     
     /*palabra="Libro";
     vector<DTInfoEstudiante> Link_Info_Estudiante2;

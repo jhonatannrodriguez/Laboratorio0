@@ -46,5 +46,5 @@ string Libro::toString(){
 
 Libro::~Libro() {
     this->getautores().clear();
-    cout << "al lobby" << endl;
+    cout << "al lobby libro" << endl;
 }
