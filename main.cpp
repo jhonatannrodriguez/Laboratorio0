@@ -10,6 +10,48 @@
 
 using namespace std;
 
+// Funcion auxiliar para parte h
+
+void palabra_en_info_estudiante(string palabra, vector<Informacion*> vector_informacion){
+// Creo un par de variables para facilitar la lectura del codigo
+
+    vector<DTInfoEstudiante> Link_Info_Estudiante;
+    vector<Informacion*> vector_info_guardada;
+
+// Busco en el vector de informacion la palabra y guardo las informaciones que contengan la palabra en otro vector
+
+    for (unsigned long int i=0;i<vector_informacion.size();i++) {
+        if (vector_informacion[i]->toString().find(palabra) != string::npos)
+            vector_info_guardada.push_back(vector_informacion[i]);
+    }
+
+// Busco en las informaciones que contenian la palabra los estudiantes que la guardaron y los guardo en Link_Info_Estudiante
+
+    for (unsigned long int i=0;i<vector_info_guardada.size();i++){
+        for (unsigned long int j=0;j<vector_info_guardada[i]->getguardado().size();j++) {
+            
+            // Variable auxiliar para crear el DTInfoEstudiante que luego guardo en Link_Info_Estudiante
+             
+            DTInfoEstudiante Est_actual = DTInfoEstudiante(
+                vector_info_guardada[i]->getguardado()[j]->getCI(),
+                vector_info_guardada[i]->getguardado()[j]->getnombre(),
+                vector_info_guardada[i]->getId());
+            Link_Info_Estudiante.push_back(Est_actual);
+        }
+    }
+  
+// Finalmente en Link_Info_Estudiante tengo el vector con los pares <Informacion , Estudiante>
+
+    for (unsigned long int i=0;i<Link_Info_Estudiante.size();i++){
+         cout << Link_Info_Estudiante[i] << endl;
+    }
+
+    vector_info_guardada.clear();
+    Link_Info_Estudiante.clear();
+}
+
+
+
 int main()
 {
     
@@ -96,86 +138,30 @@ int main()
 /* PARTE H (Recorremos las informaciones en busca de la palabra "polimorfismo" y devolvemos un vector de 
 estudiantes que han guardado esa información) */
 
-// Creo un par de variables para facilitar la lectura del codigo
-
-    string palabra="polimorfismo";
-    vector<DTInfoEstudiante> Link_Info_Estudiante;
-    vector<Informacion*> vector_info_guardada;
-
-// Busco en el vector de informacion la palabra y guardo las informaciones que contengan la palabra en otro vector
-
-    for (unsigned long int i=0;i<vector_info.size();i++) {
-        if (vector_info[i]->toString().find(palabra) != string::npos)
-            vector_info_guardada.push_back(vector_info[i]);
-    }
-
-// Busco en las informaciones que contenian la palabra los estudiantes que la guardaron y los guardo en Link_Info_Estudiante
-
-    for (unsigned long int i=0;i<vector_info_guardada.size();i++){
-        for (unsigned long int j=0;j<vector_info_guardada[i]->getguardado().size();j++) {
-            
-            // Variable auxiliar para crear el DTInfoEstudiante que luego guardo en Link_Info_Estudiante
-             
-            DTInfoEstudiante Est_actual = DTInfoEstudiante(
-                vector_info_guardada[i]->getguardado()[j]->getCI(),
-                vector_info_guardada[i]->getguardado()[j]->getnombre(),
-                vector_info_guardada[i]->getId());
-            Link_Info_Estudiante.push_back(Est_actual);
-        }
-    }
-  
-// Finalmente en Link_Info_Estudiante tengo el vector con los pares <Informacion , Estudiante>
-
-    for (unsigned long int i=0;i<Link_Info_Estudiante.size();i++){
-         cout << Link_Info_Estudiante[i] << endl;
-    }
+    palabra_en_info_estudiante("polimorfismo",vector_info);
 
 // PARTE I (Eliminamos un objeto de clase Información y sus correspondientes relaciones)
 // Eliminamos Info5
- // Borra la referencia al objeto Informacion de cada Estudiante que lo tenga guardado
-    for (unsigned long int i = 0; i < vector_info[4]->getguardado().size(); ++i) {
+// Borra la referencia al objeto Informacion de cada Estudiante que lo tenga guardado
+
+    for (unsigned long int i = 0; i < vector_info[4]->getguardado().size(); i++) {
         cout<<"for 1"<<endl;
-        for (unsigned long int j = vector_info[4]->getguardado()[i]->getguardado()[j].size(); j >= 0; --j) {
+        for (unsigned long int j = vector_info[4]->getguardado()[i]->getguardado().size() + 1; j >= 1; j--) {
             cout<<"for 2 "<< j<<endl;
-            if (vector_info[4]->getguardado()[i]->getguardado()[j] == vector_info[4]) {
+            if (vector_info[4]->getguardado()[i]->getguardado()[j-1] == vector_info[4]) {
                 cout<<"if"<<endl;
                 //Se va de rango si j = 2
-                vector_info[4]->getguardado()[i]->getguardado().erase(vector_info[4]->getguardado()[i]->getguardado().begin() + j);             
+                vector_info[4]->getguardado()[i]->getguardado().erase(vector_info[4]->getguardado()[i]->getguardado().begin() + (j-1));             
                 break;
             }
         }
     }
 
 
-vector_info[4]->getguardado().clear();
-delete vector_info[4];
+    vector_info[4]->getguardado().clear();
+    delete vector_info[4];
 
     
-    /*palabra="Libro";
-    vector<DTInfoEstudiante> Link_Info_Estudiante2;
-    vector<Informacion*> vector_info_guardada2;
+    palabra_en_info_estudiante("Libro",vector_info);
 
-// Busco en el vector de informacion la palabra y guardo las informaciones que contengan la palabra en otro vector
-
-    for (unsigned long int i=0;i<vector_info.size();i++) {
-        if (vector_info[i]->toString().find(palabra) != string::npos)
-            vector_info_guardada2.push_back(vector_info[i]);
-    }
-    
-    for (unsigned long int i=0;i<vector_info_guardada2.size();i++){
-        for (unsigned long int j=0;j<vector_info_guardada2[i]->getguardado().size();j++) {
-            
-            // Variable auxiliar para crear el DTInfoEstudiante que luego guardo en Link_Info_Estudiante
-             
-            DTInfoEstudiante Est_actual2 = DTInfoEstudiante(
-                vector_info_guardada2[i]->getguardado()[j]->getCI(),
-                vector_info_guardada2[i]->getguardado()[j]->getnombre(),
-                vector_info_guardada2[i]->getId());
-            Link_Info_Estudiante2.push_back(Est_actual2);
-        }
-    }
-
-    for (unsigned long int i=0;i<Link_Info_Estudiante2.size();i++){
-         cout << Link_Info_Estudiante2[i] << endl;
-    }*/
 }
