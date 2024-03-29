@@ -24,6 +24,9 @@ void palabra_en_info_estudiante(string palabra, vector<Informacion*> vector_info
         if (vector_informacion[i]->toString().find(palabra) != string::npos)
             vector_info_guardada.push_back(vector_informacion[i]);
     }
+    if (vector_info_guardada.size() == 0) {
+        cout << "No se encontro la palabra" << palabra << endl;
+    }
 
 // Busco en las informaciones que contenian la palabra los estudiantes que la guardaron y los guardo en Link_Info_Estudiante
 
@@ -74,9 +77,9 @@ int main()
     // PARTE B (Creamos los objetos de la clase chatGPT)
 
     DTFecha fecha3 = DTFecha(8, 3, 2024);  
-    chatGPT* Info3=new chatGPT("¿Qué es el polimorfismo en orientación a objetos?", "El polimorfismo en programación orientada a objetos se refiere a la capacidad de un objeto de tomar múltiples formas. Puede ser estático, resuelto en tiempo de compilación, basado en la herencia, o dinámico, resuelto en tiempo de ejecución, asociado a interfaces o métodos abstractos. En esencia, permite que objetos de diferentes clases respondan a la misma interfaz de manera coherente, facilitando la flexibilidad y extensibilidad del código.") : Informacion(3, fecha3);      
-    //Info3->setfecha(fecha3);
-    //Info3->setId(3);
+    chatGPT* Info3 = new chatGPT("¿Qué es el polimorfismo en orientación a objetos?", "El polimorfismo en programación orientada a objetos se refiere a la capacidad de un objeto de tomar múltiples formas. Puede ser estático, resuelto en tiempo de compilación, basado en la herencia, o dinámico, resuelto en tiempo de ejecución, asociado a interfaces o métodos abstractos. En esencia, permite que objetos de diferentes clases respondan a la misma interfaz de manera coherente, facilitando la flexibilidad y extensibilidad del código.");      
+    Info3->setfecha(fecha3);
+    Info3->setId(3);
     vector_info.push_back(Info3);
 
     chatGPT* Info4 = new chatGPT("¿Qué es el acoplamiento en orientación a objetos?", "El acoplamiento en programación orientada a objetos se refiere al grado de dependencia entre las clases o módulos de un sistema. Un bajo acoplamiento es deseable, ya que implica que las clases son independientes entre sí, lo que facilita la modificación, mantenimiento y reutilización del código. Por otro lado, un alto acoplamiento indica una fuerte interdependencia entre las clases, lo que puede hacer que el sistema sea más difícil de entender, modificar y mantener.");
@@ -88,7 +91,7 @@ int main()
     // PARTE C (Creamos el objeto de la clase Libro)
 
     vector<string> autores = {"Craig Larman"}; 
-    Libro* Info5=new Libro("Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development", autores, "Applying UML and Patterns is the world’s #1 business and college introduction to “thinking in objects”―and using that insight in real-world object-oriented analysis and design. Building on two widely acclaimed previous editions, Craig Larman has updated this book to fully reflect the new UML 2 standard, to help you master the art of object design, and to promote high-impact, iterative, and skillful agile modeling practices.");
+    Libro* Info5 = new Libro("Applying UML and Patterns: An Introduction to Object-Oriented Analysis and Design and Iterative Development", autores, "Applying UML and Patterns is the world’s #1 business and college introduction to “thinking in objects”―and using that insight in real-world object-oriented analysis and design. Building on two widely acclaimed previous editions, Craig Larman has updated this book to fully reflect the new UML 2 standard, to help you master the art of object design, and to promote high-impact, iterative, and skillful agile modeling practices.");
     
     DTFecha fecha5 = DTFecha(15, 3, 2024);                  
     Info5->setfecha(fecha5);
@@ -126,14 +129,14 @@ int main()
     DTFecha Fecha = DTFecha(8,3,2024);
     vector<string> Info_estudiante1 = est1->listarInfo(Fecha); 
     for(unsigned long int i = 0; i < Info_estudiante1.size(); i++) {
-          cout << Info_estudiante1[i] << "\n";
-};
+        cout << Info_estudiante1[i] << "\n";
+    };
 
     cout << "Informacion posterior a la fecha 8/3/2024 estudiante 2:" << "\n";
     vector<string> Info_estudiante2 = est2->listarInfo(Fecha); 
     for(unsigned long int i = 0; i < Info_estudiante2.size(); i++) {
-          cout << Info_estudiante2[i] << "\n";
-};
+        cout << Info_estudiante2[i] << "\n";
+    };
 
 /* PARTE H (Recorremos las informaciones en busca de la palabra "polimorfismo" y devolvemos un vector de 
 estudiantes que han guardado esa información) */
@@ -142,7 +145,6 @@ estudiantes que han guardado esa información) */
 
 // PARTE I (Eliminamos un objeto de clase Información y sus correspondientes relaciones)
 // Eliminamos Info5
-
 
     est2->getguardado().pop_back();
     delete vector_info[4];
