@@ -47,5 +47,5 @@ string PaginaWeb::toString(){
 
 PaginaWeb::~PaginaWeb() {
     this->getguardado().clear();
-    cout << "Objeto Informacion eliminado!" << endl;
+    cout << "Objeto Información eliminado!" << endl;
 }

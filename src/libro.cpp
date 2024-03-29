@@ -46,5 +46,5 @@ string Libro::toString(){
 Libro::~Libro() {
     this->getguardado().clear();
     this->getautores().clear();
-    cout << "Objeto Informacion eliminado!" << endl;
+    cout << "Objeto Información eliminado!" << endl;
 }
