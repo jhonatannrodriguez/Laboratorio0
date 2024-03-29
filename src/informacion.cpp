@@ -3,13 +3,13 @@
 #include <string>
 
 Informacion :: Informacion() {
-    this->id = 0;
-    this->fecha = DTFecha(0, 0 ,0);
+    this->Identificador = 0;
+    this->Fecha = DTFecha(0, 0 ,0);
 }
 
 Informacion :: Informacion(int id, DTFecha fecha) {
-    this->id = id;
-    this->fecha = fecha;
+    this->Identificador = id;
+    this->Fecha = fecha;
 }
 
 int Informacion::getId(){
