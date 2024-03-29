@@ -16,6 +16,8 @@ class Informacion {
         vector<Estudiante*> guardado_por;
     public:
         virtual string toString()=0;
+        Informacion();
+        Informacion(int, DTFecha);
         int getId();
         void setId(int);
         DTFecha getfecha();

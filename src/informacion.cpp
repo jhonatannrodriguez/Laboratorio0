@@ -2,6 +2,16 @@
 #include <iostream>
 #include <string>
 
+Informacion :: Informacion() {
+    this->id = 0;
+    this->fecha = DTFecha(0, 0 ,0);
+}
+
+Informacion :: Informacion(int id, DTFecha fecha) {
+    this->id = id;
+    this->fecha = fecha;
+}
+
 int Informacion::getId(){
     return this->Identificador;
 }
