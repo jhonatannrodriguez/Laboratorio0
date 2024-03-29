@@ -25,7 +25,7 @@ void palabra_en_info_estudiante(string palabra, vector<Informacion*> vector_info
             vector_info_guardada.push_back(vector_informacion[i]);
     }
     if (vector_info_guardada.size() == 0) {
-        cout << "No se encontro la palabra" << palabra << endl;
+        cout << "No se encontro la palabra " << palabra << endl;
     }
 
 // Busco en las informaciones que contenian la palabra los estudiantes que la guardaron y los guardo en Link_Info_Estudiante
