@@ -142,7 +142,6 @@ estudiantes que han guardado esa información) */
 
 // PARTE I (Eliminamos un objeto de clase Información y sus correspondientes relaciones)
 // Eliminamos Info5
-// Borra la referencia al objeto Informacion de cada Estudiante que lo tenga guardado
 
 
     est2->getguardado().pop_back();
@@ -150,16 +149,7 @@ estudiantes que han guardado esa información) */
     vector_info.pop_back();
     
 //Prueba para verificar que la informacion fue borrada.
+
     palabra_en_info_estudiante("Libro",vector_info);
 
-//Eliminamos memoria dinamica creada
-  /*  for(unsigned long int i = 0; i < vector_info.size(); i++){
-        delete vector_info[i];
-    }
-    vector_info.clear();
-
-    for(unsigned long int i = 0; i < vector_est.size(); i++){
-        delete vector_est[i];
-    }
-    vector_est.clear();*/
 }
