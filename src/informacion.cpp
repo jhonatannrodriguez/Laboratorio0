@@ -30,7 +30,7 @@ bool Informacion::esfechaposterior(DTFecha fecha) {
         return true;
     } else if (getfecha().getmes() < fecha.getmes()) {
         return false;
-    } else if (getfecha().getdia() >= fecha.getdia()) {  //preguntar si se agrega misma fecha
+    } else if (getfecha().getdia() >= fecha.getdia()) {  
         return true;
     } else return false;
 }
